@@ -61,3 +61,69 @@ Server2 -> Client Ping Test
 ![image](https://github.com/rkadl9999/Network_Security_Solution/assets/80202054/2bf623d3-01d8-43bf-8665-fab1da16bb8b)  
 
 ---
+### 외부 → 내부, SYN Attack 탐지 및 로그 ( IDS )
+Intrusion Detection System Enable  
+
+![image](https://github.com/rkadl9999/Network_Security_Solution/assets/80202054/5a321ba3-9c02-4fcb-b41a-10f1b5c1cfdf)  
+
+SYN Flooding alert Rule Enable  
+
+![image](https://github.com/rkadl9999/Network_Security_Solution/assets/80202054/6d51192a-eb20-409a-bf19-ae4330a36fc9)  
+
+emerging-dos Ruleset Enable  
+
+![image](https://github.com/rkadl9999/Network_Security_Solution/assets/80202054/3cae161b-7721-41ed-bfad-a670afd398b7)  
+
+Policy Apply  
+
+![image](https://github.com/rkadl9999/Network_Security_Solution/assets/80202054/ef827213-dfea-4d07-9b86-8d2281bc9fd7)  
+
+SYN Flooding Test  
+
+![image](https://github.com/rkadl9999/Network_Security_Solution/assets/80202054/3179ae6d-5635-4429-ae44-ecf3f1fb89aa)  
+
+![image](https://github.com/rkadl9999/Network_Security_Solution/assets/80202054/c3fd3342-e18e-412c-a3c1-07d32f35d2d8)  
+
+---
+### OpenVPN 사용하여, SSLVPN 설정 ( SSL/TLS + User Auth 인증 방식 채택 )
+Add Internal Authorities  
+
+![image](https://github.com/rkadl9999/Network_Security_Solution/assets/80202054/212196d4-4fb7-4199-87ca-a043add59ffe)  
+
+Add Server Certificate  
+
+![image](https://github.com/rkadl9999/Network_Security_Solution/assets/80202054/bb8fc2a3-1863-4beb-b9cc-b23afca459b4)  
+
+Add a user to use when connecting to a VPN  
+
+![image](https://github.com/rkadl9999/Network_Security_Solution/assets/80202054/990b1bc2-e481-4071-8622-3ed73ed2578d)  
+( Check this option && Save )  
+![image](https://github.com/rkadl9999/Network_Security_Solution/assets/80202054/8df75e44-39da-4a96-8d56-9d2fbccbbca8)  
+
+Add Client Certificate for ovpn user  
+
+![image](https://github.com/rkadl9999/Network_Security_Solution/assets/80202054/7eb4e0c7-5279-4965-bc07-85c5c036b5f1)  
+
+Create an OpenVPN server using "Use a wizard to setup a new server"  
+
+![image](https://github.com/rkadl9999/Network_Security_Solution/assets/80202054/09194336-4246-480f-8c77-2e7ecbcf2036)  
+![image](https://github.com/rkadl9999/Network_Security_Solution/assets/80202054/f21b38d2-fe7a-4194-92e4-0be8f8745818)  
+![image](https://github.com/rkadl9999/Network_Security_Solution/assets/80202054/d1323b27-cf73-42b8-9fa8-ee4932c764e2)  
+![image](https://github.com/rkadl9999/Network_Security_Solution/assets/80202054/cf63b631-d5d3-4f1f-8617-7741a58c9a3e)  
+![image](https://github.com/rkadl9999/Network_Security_Solution/assets/80202054/d0d1e7fd-e84c-49c9-8e22-83a0f14ef41d)  
+![image](https://github.com/rkadl9999/Network_Security_Solution/assets/80202054/3cf6ff6e-ab9a-411f-a736-dfa8e947e99d)  
+
+Client Export ( ovpn File )  
+
+![image](https://github.com/rkadl9999/Network_Security_Solution/assets/80202054/627d6066-9e75-41f9-875e-b5ee56ff7efc)  
+
+Run ovpn file on SSLClient  
+
+![image](https://github.com/rkadl9999/Network_Security_Solution/assets/80202054/0fa38d9b-6f35-4446-85f7-8619db629b2f)  
+
+SSLClient -> Server1 Ping Test  
+
+![image](https://github.com/rkadl9999/Network_Security_Solution/assets/80202054/ddd79c91-8720-4e2f-91c2-f784451331df)  
+![image](https://github.com/rkadl9999/Network_Security_Solution/assets/80202054/d2843aa4-490d-4ce5-bebc-d683719ff185)  
+
+---
