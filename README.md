@@ -127,3 +127,25 @@ SSLClient -> Server1 Ping Test
 ![image](https://github.com/rkadl9999/Network_Security_Solution/assets/80202054/d2843aa4-490d-4ce5-bebc-d683719ff185)  
 
 ---
+# Troubleshooting
+## [ERROR] certificate is not yet valid
+![image](https://github.com/rkadl9999/Network_Security_Solution/assets/80202054/c032cde7-9ca1-4d23-8a4b-5ae3f9ef82b1)  
+
+OpenVPN 설정 후, 처음 OpenVPN 접속을 시도했을 때 위와 같은 오류가 떴다.  
+먼저 인증서와 관련된 오류이니 SSLVPN에서 만들었던 인증서를 확인해봤다.  
+
+![image](https://github.com/rkadl9999/Network_Security_Solution/assets/80202054/b98c3369-d0a3-4773-b57e-2d43a9e1e23a)  
+
+딱히 인증서 자체에 문제가 있어보이지는 않아, 다시 오류 메시지를 확인해보니 "yet" "아직"이라는 단어가 눈에 띈다.  
+따라서 인증서의 유효 기간에 문제가 있다고 추론하고, 인증서 유효 기간과 SSLClient 시스템 시간을 확인해봤다.  
+
+![image](https://github.com/rkadl9999/Network_Security_Solution/assets/80202054/0c820598-235c-4f55-b88c-b95670c8e52e)
+![image](https://github.com/rkadl9999/Network_Security_Solution/assets/80202054/b553f3fc-dfeb-4ad7-a6d0-2509350bf4ed)  
+
+위 사진을 보면 인증서 유효 기간은 2023-09-07 14:55 부터 유효하다고 나와있지만,  
+SSLClient 시스템 시간은 그 전인 2023-09-06으로 설정되어 있다.  
+
+따라서 SSLClient 시스템 시간을 인증서가 유효한 기간으로 바꾸거나, SSLVPN 시스템 시간과 동일하게 변경하면 해결되는 문제이다.  
+
+![image](https://github.com/rkadl9999/Network_Security_Solution/assets/80202054/d4ad91bb-7b81-45fc-a887-23bf2f114408)  
+( 위와 같이 시간을 변경하고 다시 연결을 시도 했을 때 연결 성공 )
